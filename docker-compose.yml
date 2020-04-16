@@ -14,7 +14,7 @@ services:
       - webproxy
   webapi:
     build:
-      context: ./PCTASK
+      context: PCTASK
       dockerfile: Dockerfile
     image: webapi
     container_name: webapi
@@ -26,6 +26,17 @@ services:
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
       - "80"
+    networks:
+      - webproxy
+  front:
+   build:
+      context: pctask-frontend
+      dockerfile: Dockerfile
+    image: frontend
+    container_name: front_app
+    restart: always
+    ports:
+      - "8080"
     networks:
       - webproxy
 

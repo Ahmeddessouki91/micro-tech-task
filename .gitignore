@@ -79,7 +79,8 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-
+.env
+launchSettings.json
 # System Files
 .DS_Store
 Thumbs.db
