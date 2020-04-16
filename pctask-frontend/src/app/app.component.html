@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Micro-Tech</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarsExampleDefault"
+    aria-controls="navbarsExampleDefault"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/products']"
+          >Products <span class="sr-only">(current)</span></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">Hello</h1>
+      <p>
+        This is a solution for managing product catalog. So users can use this
+        application to add, edit, remove, view and search and export (Excel)
+        product catalog items, information about product catalog.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <router-outlet></router-outlet>
+    <hr />
+  </div>
+  <!-- /container -->
+</main>
+
+<footer class="container ">
+  <div class="w-100 d-flex justify-content-between">
+    <span>Created by Ahmed Dessouki</span>
+    <span class="text-right">eng.ahmed.dessouki91@gmail.com</span>
+  </div>
+</footer>

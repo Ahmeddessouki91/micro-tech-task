@@ -1,0 +1,80 @@
+<div class="row my-4">
+  <div class="col-md-4">
+    <a class="btn btn-primary text-white" [routerLink]="['/products/new']"
+      >Create new</a
+    >
+  </div>
+</div>
+<hr />
+<form (ngSubmit)="search()" [formGroup]="form">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="Name"
+          formControlName="name"
+        />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input
+              type="number"
+              name="startprice"
+              class="form-control"
+              placeholder="Start price"
+              formControlName="startPrice"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input
+              type="number"
+              name="endprice"
+              class="form-control"
+              placeholder="End price"
+              formControlName="endPrice"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-success">Search</button>
+    </div>
+  </div>
+</form>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Photo</th>
+      <th scope="col">Price</th>
+      <th scope="col">Created at</th>
+      <th scope="col">Updated at</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of product$ | async; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.photo }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.createdAt | date }}</td>
+      <td>{{ product.updatedAt | date }}</td>
+      <td>
+        <a class="btn btn-warning" routerLink="/products/edit/{{ product.id }}"
+          >Edit</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
