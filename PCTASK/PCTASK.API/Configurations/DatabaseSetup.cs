@@ -19,7 +19,7 @@ namespace PCTASK.API.Configurations
             {
                 var builder = new SqlConnectionStringBuilder(configuration.GetConnectionString("DefaultConnection"));
                 builder.Password = configuration["DB_PASSWORD"];
-
+                builder.DataSource = configuration["DB_HOST"];
                 connection = builder.ConnectionString;
             }
 
