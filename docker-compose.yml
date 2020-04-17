@@ -25,7 +25,7 @@ services:
       - DB_HOST=db
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
-      - "80"
+      - "80:5001"
     networks:
       - webproxy
   front:
@@ -35,8 +35,10 @@ services:
     image: frontend
     container_name: front_app
     restart: always
+    environment:
+      - DOMAIN=$DOMAIN
     ports:
-      - "8080"
+      - "80:8080"
     networks:
       - webproxy
 networks:
