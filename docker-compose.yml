@@ -29,7 +29,7 @@ services:
     networks:
       - webproxy
   front:
-   build:
+    build:
       context: pctask-frontend
       dockerfile: Dockerfile
     image: frontend
@@ -39,7 +39,6 @@ services:
       - "8080"
     networks:
       - webproxy
-
 networks:
   webproxy:
     external: true
