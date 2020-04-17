@@ -25,7 +25,7 @@ services:
       - DB_HOST=db
       - ASPNETCORE_ENVIRONMENT=Production
     ports:
-      - "80:5001"
+      - "8080:5001"
     networks:
       - webproxy
   front:
